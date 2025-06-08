@@ -1,10 +1,15 @@
-'use client'
+'use client';
 import { useState } from 'react';
 
+type Message = {
+  sender: string;
+  text: string;
+};
+
 export default function Chatbot() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
 
   async function sendMessage() {
     const newMessage = { sender: 'user', text: input };
@@ -26,10 +31,20 @@ export default function Chatbot() {
           <p key={i}><strong>{msg.sender}:</strong> {msg.text}</p>
         ))}
       </div>
-      <input className="border p-2 w-full mt-2" value={input}
-        onChange={(e) => setInput(e.target.value)} placeholder="Type your message" />
-      <input type="file" className="mt-2" onChange={(e) => setFile(e.target.files[0])} />
-      <button onClick={sendMessage} className="bg-blue-600 text-white px-4 py-2 rounded mt-2">Send</button>
+      <input
+        className="border p-2 w-full mt-2"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Type your message"
+      />
+      <input
+        type="file"
+        className="mt-2"
+        onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+      />
+      <button onClick={sendMessage} className="bg-blue-600 text-white px-4 py-2 rounded mt-2">
+        Send
+      </button>
     </section>
   );
 }
