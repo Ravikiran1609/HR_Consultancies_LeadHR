@@ -3,15 +3,19 @@ version: '3.8'
 services:
   app:
     build: .
+    container_name: hr_app
     ports:
       - "3000:3000"
     environment:
       DATABASE_URL: "postgresql://postgres:postgres@db:5432/hrdb"
     depends_on:
       - db
+    volumes:
+      - ./public/uploads:/app/public/uploads
 
   db:
     image: postgres:16
+    container_name: hr_postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
