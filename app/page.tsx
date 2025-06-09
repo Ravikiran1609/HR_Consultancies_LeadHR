@@ -4,29 +4,18 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <div>
-      {/* Animated Hero Section */}
-      <section className="relative overflow-hidden text-center py-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100 z-10">
-        {/* Wave Background */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180 z-0">
-          <svg className="relative block w-[200%] h-[150px]" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,0 C50,100 150,0 200,100 L200,00 L0,0 Z" fill="#DBEAFE" />
-          </svg>
-        </div>
-
-        {/* Floating Icon */}
-        <motion.div
-          className="absolute top-12 right-10 text-blue-300 text-4xl z-10"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 4 }}
-        >
-          💼
-        </motion.div>
+      {/* Hero Section with Background Image */}
+      <section
+        className="relative text-center py-28 px-4 bg-cover bg-center bg-no-repeat z-10"
+        style={{ backgroundImage: 'url(/vecteezy_hrm-or-human-resource-management-focus-to-manager-icon_25025436.jpg)' }}
+      >
+        <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-sm z-0" />
 
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-blue-900 mb-6 whitespace-nowrap overflow-hidden text-ellipsis z-10 relative"
+          className="relative text-3xl md:text-5xl font-extrabold text-white mb-6 whitespace-nowrap"
         >
           Welcome to Lead HR
         </motion.h2>
@@ -35,7 +24,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto z-10 relative"
+          className="relative text-base md:text-lg text-gray-200 max-w-2xl mx-auto"
         >
           Your trusted partner in HR transformation — recruitment, payroll, training, leadership and more.
         </motion.p>
@@ -45,7 +34,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9 }}
-          className="inline-block mt-6 md:mt-10 px-6 py-3 w-full sm:w-auto text-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow z-10 relative"
+          className="relative inline-block mt-6 md:mt-10 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow"
         >
           Contact Us
         </motion.a>
@@ -99,4 +88,3 @@ export default function Home() {
     </div>
   );
 }
-
