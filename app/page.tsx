@@ -1,11 +1,14 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import type { HTMLMotionProps } from 'framer-motion';
 
-const MotionH2 = motion('h2');
-const MotionP = motion('p');
-const MotionA = motion('a');
-const MotionDiv = motion('div');
+
+const MotionH2 = motion<'h2'>('h2');
+const MotionP = motion<'p'>('p');
+const MotionA = motion<'a'>('a');
+const MotionDiv = motion<'div'>('div');
+
 
 const testimonials = [
   { name: 'Ravi K.', role: 'CEO, FlexHire', quote: 'Lead HR transformed how we hire — truly world-class.' },
@@ -132,4 +135,3 @@ export default function Home() {
     </div>
   );
 }
-
