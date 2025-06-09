@@ -1,6 +1,7 @@
 'use client';
 import '../styles/globals.css';
 import { useState } from 'react';
+import ChatbotWidget from '../components/ChatbotWidget';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
             {/* Responsive Nav */}
             <nav
-              className={`${
+              className={`$${
                 menuOpen ? 'flex' : 'hidden'
               } flex-col md:flex md:flex-row absolute md:static top-16 left-0 right-0 bg-white md:bg-transparent text-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 shadow md:shadow-none z-10`}
             >
@@ -54,6 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <main className="container mx-auto px-4 py-6">{children}</main>
 
+        {/* Floating Chatbot Widget */}
+        <ChatbotWidget />
+
         <footer className="bg-white text-center py-6 mt-16 border-t text-sm text-gray-500">
           © {new Date().getFullYear()} Lead HR. All rights reserved.
         </footer>
@@ -61,3 +65,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
