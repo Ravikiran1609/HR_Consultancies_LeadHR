@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <div>
-      {/* Hero Section with Background Image */}
+      {/* Hero Section with High-Clarity Background */}
       <section
         className="relative text-center py-28 px-4 bg-cover bg-center bg-no-repeat z-10"
         style={{ backgroundImage: 'url(/vecteezy_hrm-or-human-resource-management-focus-to-manager-icon_25025436.jpg)' }}
       >
-        <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-sm z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/10 z-0" />
 
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative text-3xl md:text-5xl font-extrabold text-white mb-6 whitespace-nowrap"
+          className="relative text-3xl md:text-5xl font-extrabold text-white mb-6 text-shadow-md"
         >
           Welcome to Lead HR
         </motion.h2>
@@ -24,7 +24,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative text-base md:text-lg text-gray-200 max-w-2xl mx-auto"
+          className="relative text-base md:text-lg text-white max-w-2xl mx-auto text-shadow-md"
         >
           Your trusted partner in HR transformation — recruitment, payroll, training, leadership and more.
         </motion.p>

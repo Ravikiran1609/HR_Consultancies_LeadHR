@@ -1,7 +1,12 @@
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      textShadow: {
+        md: '0 2px 4px rgba(0, 0, 0, 0.5)',
+      },
+    },
   },
   plugins: [],
 };
+
