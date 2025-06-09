@@ -54,7 +54,7 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <MotionH2
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
