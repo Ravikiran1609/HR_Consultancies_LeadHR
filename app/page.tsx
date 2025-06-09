@@ -6,27 +6,27 @@ export default function Home() {
     <div>
       {/* Hero Section with High-Clarity Background */}
       <section
-        className="relative text-center py-28 px-4 bg-cover bg-center bg-no-repeat z-10"
+        className="relative text-center py-32 px-4 bg-cover bg-center bg-no-repeat z-10"
         style={{ backgroundImage: 'url(/vecteezy_hrm-or-human-resource-management-focus-to-manager-icon_25025436.jpg)' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/10 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20 z-0" />
 
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative text-3xl md:text-5xl font-extrabold text-white mb-6 text-shadow-md"
+          className="relative text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 text-shadow-md tracking-wide"
         >
-          Welcome to Lead HR
+          Transforming Talent. Empowering Success.
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative text-base md:text-lg text-white max-w-2xl mx-auto text-shadow-md"
+          className="relative text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto text-shadow-md font-medium"
         >
-          Your trusted partner in HR transformation — recruitment, payroll, training, leadership and more.
+          Partnering with you to deliver expert HR solutions — from recruitment and payroll to leadership development and strategic workforce planning.
         </motion.p>
 
         <motion.a
@@ -34,7 +34,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9 }}
-          className="relative inline-block mt-6 md:mt-10 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow"
+          className="relative inline-block mt-8 px-6 py-3 bg-blue-600 text-white text-lg rounded-lg hover:bg-blue-700 shadow-md"
         >
           Contact Us
         </motion.a>
@@ -88,3 +88,4 @@ export default function Home() {
     </div>
   );
 }
+
