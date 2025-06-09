@@ -2,6 +2,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
+const MotionH2 = motion('h2');
+const MotionP = motion('p');
+const MotionA = motion('a');
+const MotionDiv = motion('div');
+
 const testimonials = [
   { name: 'Ravi K.', role: 'CEO, FlexHire', quote: 'Lead HR transformed how we hire — truly world-class.' },
   { name: 'Anita D.', role: 'HR Manager, TalentHub', quote: 'Their training and payroll management are top-notch.' },
@@ -19,7 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play();
+      videoRef.current.play().catch(() => {});
     }
   }, [showVideo]);
 
@@ -46,25 +51,25 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <motion.h2
+          <MotionH2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg"
           >
             Transforming Talent. Empowering Success.
-          </motion.h2>
+          </MotionH2>
 
-          <motion.p
+          <MotionP
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-lg sm:text-xl text-gray-200 font-medium drop-shadow"
           >
             Partnering with you to deliver expert HR solutions — from recruitment and payroll to leadership development and strategic workforce planning.
-          </motion.p>
+          </MotionP>
 
-          <motion.a
+          <MotionA
             href="/contact"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -72,7 +77,7 @@ export default function Home() {
             className="inline-block mt-8 px-6 py-3 bg-blue-600 text-white text-lg rounded-lg hover:bg-blue-700 shadow-lg"
           >
             Contact Us
-          </motion.a>
+          </MotionA>
         </div>
       </section>
 
@@ -100,8 +105,8 @@ export default function Home() {
             ['Recruitment', 'Expert hiring solutions'],
             ['Payroll', 'Accurate & secure payments'],
             ['Training', 'Upskill your workforce'],
-          ].map(([title, desc], i) => (
-            <motion.div
+          ].map(([title, desc]) => (
+            <MotionDiv
               key={title}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -109,7 +114,7 @@ export default function Home() {
             >
               <h4 className="text-xl font-semibold text-blue-800 mb-2">{title}</h4>
               <p className="text-gray-600">{desc}</p>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </section>
