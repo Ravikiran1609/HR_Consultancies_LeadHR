@@ -20,8 +20,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </button>
             <nav
               className={`${
-                menuOpen ? 'block' : 'hidden'
-              } absolute top-16 left-0 right-0 bg-white md:static md:flex md:space-x-6 md:items-center md:bg-transparent space-y-4 md:space-y-0 text-sm font-medium px-4 md:px-0 py-4 md:py-0`}
+                menuOpen ? 'flex' : 'hidden'
+              } flex-col md:flex md:flex-row absolute md:static top-16 left-0 right-0 bg-white md:bg-transparent text-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 shadow md:shadow-none z-10`}
             >
               <a href="/" className="hover:text-blue-600">Home</a>
               <a href="/about" className="hover:text-blue-600">About</a>
