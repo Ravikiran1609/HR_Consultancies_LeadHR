@@ -3,16 +3,16 @@ import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 const clientLogos = [
-  '/clients/collins.png',
-  '/clients/foxconn.png',
-  '/clients/hitachi.png',
-  '/clients/jktyre.png',
-  '/clients/rane.png',
-  '/clients/semitech.png',
-  '/clients/walvoil.png',
-  '/clients/yonex.png',
-  '/clients/triton.png',
-  '/clients/trmn.png',
+  '/clients/COLLIN.png',
+  '/clients/FOXCON.png',
+  '/clients/HITACHI.png',
+  '/clients/JKTYRES.png',
+  '/clients/RANE.png',
+  '/clients/SEMITECH.png',
+  '/clients/WALVOIL.png',
+  '/clients/YONEX.png',
+  '/clients/TRITON.png',
+  '/clients/TRMN.png',
 ];
 
 export default function Clients() {
