@@ -43,7 +43,7 @@ export default function About() {
           <p className="text-gray-700 text-lg">
             "When I founded Lead HR, my vision was to create an organization that puts people at the heart of progress. Today, I’m proud to say we’ve helped countless businesses build thriving teams with our expertise and care. Together, let’s continue building a future where every employee is empowered to excel."
           </p>
-          <p className="mt-4 font-semibold text-gray-600">— Ravi Kiran, Founder & CEO</p>
+          <p className="mt-4 font-semibold text-gray-600">— Shivaram, Founder & CEO</p>
         </div>
       </div>
     </section>
