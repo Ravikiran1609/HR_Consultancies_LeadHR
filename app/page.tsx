@@ -114,6 +114,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trusted Clients Section */}
+      <section className="py-16 px-4 bg-gray-100">
+        <h3 className="text-3xl font-bold text-center mb-10 text-gray-800">Trusted by Top Brands</h3>
+        <div className="flex justify-center gap-6 flex-wrap">
+          {[
+            'JK-TYRES',
+            'Hitachi',
+            'WALVOIL',
+            'Collins Aerospace',
+            'FOXCON',
+            'TRMN',
+            'TRITON',
+	    'RANE MADRAS',
+            'YONEX',
+            'SEMITECH',
+          ].map((client) => (
+            <div
+              key={client}
+              className="min-w-[140px] px-4 py-3 bg-white shadow rounded text-center text-blue-700 font-semibold text-sm hover:scale-105 transition"
+            >
+              {client}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 text-center px-4 bg-gradient-to-br from-blue-600 to-blue-400 text-white">
         <h4 className="text-4xl font-bold mb-6 drop-shadow-lg">Let’s Build Your Dream HR Strategy</h4>
