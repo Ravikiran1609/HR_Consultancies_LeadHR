@@ -5,6 +5,9 @@ module.exports = {
       textShadow: {
         md: '0 2px 4px rgba(0, 0, 0, 0.5)',
       },
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
+      },
     },
   },
   plugins: [],
