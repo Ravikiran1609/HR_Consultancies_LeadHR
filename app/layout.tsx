@@ -19,6 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
                 <span className="text-xl font-bold text-blue-700 hidden sm:inline">Lead HR</span>
               </div>
+              <span className="text-[10px] text-gray-500 pl-1 mt-1 block sm:hidden">
+                Empowering HR Excellence
+              </span>
               <span className="text-xs text-gray-500 pl-12 -mt-1 hidden sm:block">
                 Empowering HR Excellence
               </span>
