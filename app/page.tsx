@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 export default function Home() {
-  const videoRef = useRef(null);
-
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play();
