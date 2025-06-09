@@ -1,22 +1,58 @@
+'use client';
+import { motion } from 'framer-motion';
+
 export default function Home() {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="text-center py-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100">
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-blue-900 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">Welcome to Lead HR</h2>
-        <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
+      {/* Animated Hero Section */}
+      <section className="relative overflow-hidden text-center py-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100 z-10">
+        {/* Wave Background */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180 z-0">
+          <svg className="relative block w-[200%] h-[150px]" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,0 C50,100 150,0 200,100 L200,00 L0,0 Z" fill="#DBEAFE" />
+          </svg>
+        </div>
+
+        {/* Floating Icon */}
+        <motion.div
+          className="absolute top-12 right-10 text-blue-300 text-4xl z-10"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ repeat: Infinity, duration: 4 }}
+        >
+          💼
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-blue-900 mb-6 whitespace-nowrap overflow-hidden text-ellipsis z-10 relative"
+        >
+          Welcome to Lead HR
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto z-10 relative"
+        >
           Your trusted partner in HR transformation — recruitment, payroll, training, leadership and more.
-        </p>
-        <a
+        </motion.p>
+
+        <motion.a
           href="/contact"
-          className="inline-block mt-6 md:mt-10 px-6 py-3 w-full sm:w-auto text-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9 }}
+          className="inline-block mt-6 md:mt-10 px-6 py-3 w-full sm:w-auto text-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow z-10 relative"
         >
           Contact Us
-        </a>
+        </motion.a>
       </section>
 
       {/* Services Section */}
-      <section className="text-center py-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="py-16 px-4 bg-white">
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Expertise</h3>
         <div className="grid gap-y-6 md:grid-cols-3 md:gap-10">
           {[

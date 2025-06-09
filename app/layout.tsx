@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="bg-white shadow sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="/" className="flex items-center space-x-2">
-              <img src="/logo.png" alt="Lead HR logo" className="h-10 w-auto" />
+              <img src="/logo.png" alt="Lead HR logo" className="h-10 w-10 rounded-full border-4 border-gradient-to-r from-blue-400 via-white to-blue-400 hover:animate-spin transition" />
               <span className="text-xl font-bold text-blue-700 hidden sm:inline">Lead HR</span>
             </a>
             <button

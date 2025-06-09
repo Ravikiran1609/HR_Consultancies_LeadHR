@@ -2,8 +2,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 COPY . .
-
-RUN npm install
+RUN npm install framer-motion && npm install
 
 # ✅ Build the Next.js app before start
 RUN npx prisma generate && npm run build
