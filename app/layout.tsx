@@ -12,7 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="/" className="flex items-center space-x-2">
               <img src="/logo.png" alt="Lead HR logo" className="h-10 w-10 rounded-full border-4 border-gradient-to-r from-blue-400 via-white to-blue-400 hover:animate-spin transition" />
-              <span className="text-xl font-bold text-blue-700 hidden sm:inline">Lead HR</span>
+              <span className="text-sm font-semibold text-blue-700 sm:text-xl">
+                Lead HR
+                <span className="block text-xs text-gray-500 sm:hidden">Empowering HR Excellence</span>
+              </span>
             </a>
             <button
               className="md:hidden text-2xl"
@@ -45,3 +48,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
