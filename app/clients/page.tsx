@@ -1,37 +1,36 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 const clientLogos = [
-  '/clients/COLLIN.png',
-  '/clients/FOXCON.png',
-  '/clients/HITACHI.png',
-  '/clients/JKTYRES.png',
-  '/clients/RANE.png',
-  '/clients/SEMITECH.png',
-  '/clients/TRITON.png',
-  '/clients/TRMN.png',
-  '/clients/WALVOIL.png',
-  '/clients/YONEX.png',
+  '/clients/collins.png',
+  '/clients/foxconn.png',
+  '/clients/hitachi.png',
+  '/clients/jktyre.png',
+  '/clients/rane.png',
+  '/clients/semitech.png',
+  '/clients/walvoil.png',
+  '/clients/yonex.png',
+  '/clients/triton.png',
+  '/clients/trmn.png',
 ];
 
 export default function Clients() {
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (sliderRef.current) {
-        sliderRef.current.scrollLeft += 1;
-        if (
-          sliderRef.current.scrollLeft >=
-          sliderRef.current.scrollWidth / 2
-        ) {
-          sliderRef.current.scrollLeft = 0;
-        }
-      }
-    }, 20);
-    return () => clearInterval(interval);
-  }, []);
+    controls.start({
+      x: ['0%', '-50%'],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: 'loop',
+          duration: 30,
+          ease: 'linear',
+        },
+      },
+    });
+  }, [controls]);
 
   return (
     <div className="min-h-screen bg-white py-20 px-6 text-center">
@@ -39,26 +38,24 @@ export default function Clients() {
         Our Esteemed Clients
       </h1>
 
-      {/* Animated Carousel */}
+      {/* Scrolling logo row */}
       <div className="overflow-hidden relative w-full">
-        <div
-          ref={sliderRef}
-          className="flex space-x-12 w-max animate-none"
-          style={{ scrollBehavior: 'smooth' }}
+        <motion.div
+          animate={controls}
+          className="flex space-x-12 w-max"
         >
           {[...clientLogos, ...clientLogos].map((logo, idx) => (
-            <motion.img
+            <img
               key={idx}
               src={logo}
               alt={`Client ${idx + 1}`}
               className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition duration-500"
-              whileHover={{ scale: 1.1 }}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Grid fallback (below carousel) */}
+      {/* Static Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 px-4">
         {clientLogos.map((logo, idx) => (
           <motion.div
