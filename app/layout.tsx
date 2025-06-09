@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-gray-50 text-gray-900 font-sans">
         <header className="bg-white shadow sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 className="text-xl font-bold text-blue-700 whitespace-nowrap">Lead HR</h1>
+            <a href="/" className="text-xl font-bold text-blue-700 whitespace-nowrap">Lead HR</a>
             <button
               className="md:hidden text-2xl"
               onClick={() => setMenuOpen((prev) => !prev)}
@@ -42,3 +42,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
