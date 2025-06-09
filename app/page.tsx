@@ -43,11 +43,11 @@ export default function Home() {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover z-0"
-            src="/hero-background.mp4"
+            src="/hr_background_video.mp4"
           />
         ) : (
           <img
-            src="/14bdb0cc-3d28-412c-bc81-2dc2c126a412.png"
+            src="/vecteezy_hrm-or-human-resource-management-focus-to-manager-icon_25025436.jpg"
             alt="Hero"
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
