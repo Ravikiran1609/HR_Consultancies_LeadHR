@@ -3,7 +3,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="text-center py-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6 md:whitespace-nowrap">Welcome to Lead HR</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-blue-900 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">Welcome to Lead HR</h2>
         <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
           Your trusted partner in HR transformation — recruitment, payroll, training, leadership and more.
         </p>
@@ -16,7 +16,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="text-center py-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100">
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Expertise</h3>
         <div className="grid gap-y-6 md:grid-cols-3 md:gap-10">
           {[
