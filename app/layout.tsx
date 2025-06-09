@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   alt="Lead HR logo"
                   className="h-10 w-10 rounded-full border-4 border-gradient-to-r from-blue-400 via-white to-blue-400 hover:animate-spin transition"
                 />
-                <span className="text-xl font-bold text-blue-700 hidden sm:inline">Lead HR</span>
+                <span className="text-base sm:text-xl font-bold text-blue-700 block">Lead HR</span>
               </div>
               <span className="text-[10px] text-gray-500 pl-1 mt-1 block sm:hidden">
                 Empowering HR Excellence
@@ -61,4 +61,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
