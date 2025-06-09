@@ -1,11 +1,25 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const testimonials = [
   { name: 'Ravi K.', role: 'CEO, FlexHire', quote: 'Lead HR transformed how we hire — truly world-class.' },
   { name: 'Anita D.', role: 'HR Manager, TalentHub', quote: 'Their training and payroll management are top-notch.' },
   { name: 'Kiran P.', role: 'Founder, DevLaunch', quote: 'Amazing partnership in recruitment and leadership dev.' }
+];
+
+const clientLogos = [
+  '/logos/SEMITECH.png',
+  '/logos/YONEX.png',
+  '/logos/RANE.png',
+  '/logos/TRITON.png',
+  '/logos/TRMN.png',
+  '/logos/FOXCON.png',
+  '/logos/COLLIN.png',
+  '/logos/WALVOIL.png',
+  '/logos/HITACHI.png',
+  '/logos/JKTYRES.png'
 ];
 
 export default function Home() {
@@ -114,29 +128,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted Clients Section */}
+      {/* Trusted Clients Logo Carousel */}
       <section className="py-16 px-4 bg-gray-100">
         <h3 className="text-3xl font-bold text-center mb-10 text-gray-800">Trusted by Top Brands</h3>
-        <div className="flex justify-center gap-6 flex-wrap">
-          {[
-            'JK-TYRES',
-            'Hitachi',
-            'WALVOIL',
-            'Collins Aerospace',
-            'FOXCON',
-            'TRMN',
-            'TRITON',
-	    'RANE MADRAS',
-            'YONEX',
-            'SEMITECH',
-          ].map((client) => (
-            <div
-              key={client}
-              className="min-w-[140px] px-4 py-3 bg-white shadow rounded text-center text-blue-700 font-semibold text-sm hover:scale-105 transition"
-            >
-              {client}
-            </div>
-          ))}
+        <div className="overflow-hidden w-full">
+          <div className="flex w-max animate-slide gap-10 px-4">
+            {clientLogos.map((logo, i) => (
+              <div key={i} className="w-32 h-16 bg-white p-2 rounded shadow flex items-center justify-center">
+                <Image src={logo} alt={`Client ${i}`} width={120} height={50} objectFit="contain" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -153,4 +155,3 @@ export default function Home() {
     </div>
   );
 }
-
