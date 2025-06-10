@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { OpenAI } from 'openai';
+import OpenAI from 'openai';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -9,27 +9,22 @@ export async function POST(req: NextRequest) {
   try {
     const contentType = req.headers.get('content-type') || '';
 
+    let userMessage = '';
+
+    // Handle form-data
     if (contentType.includes('multipart/form-data')) {
       const formData = await req.formData();
-      const text = formData.get('text')?.toString() || '';
-      const file = formData.get('file') as File | null;
-
-      const userPrompt = `User said: "${text}"`;
-
-      const response = await openai.chat.completions.create({
-        model: 'gpt-4',
-        messages: [{ role: 'user', content: userPrompt }],
-        temperature: 0.7,
-      });
-
-      const replyText = response.choices[0]?.message?.content || 'Sorry, no response.';
-
-      return NextResponse.json({ text: replyText });
+      const text = formData.get('text')?.toString();
+      userMessage = text || '';
+    } else {
+      // Handle JSON
+      const body = await req.json();
+      userMessage = body.text || '';
     }
 
-    // Handle fallback (non-file requests)
-    const body = await req.json();
-    const userMessage = body.text;
+    if (!userMessage) {
+      return NextResponse.json({ text: 'Please enter a message.' }, { status: 400 });
+    }
 
     const response = await openai.chat.completions.create({
       model: 'gpt-4',
@@ -37,7 +32,7 @@ export async function POST(req: NextRequest) {
       temperature: 0.7,
     });
 
-    const replyText = response.choices[0]?.message?.content || 'Sorry, no response.';
+    const replyText = response.choices[0]?.message?.content || 'Sorry, no response from AI.';
 
     return NextResponse.json({ text: replyText });
   } catch (error) {
